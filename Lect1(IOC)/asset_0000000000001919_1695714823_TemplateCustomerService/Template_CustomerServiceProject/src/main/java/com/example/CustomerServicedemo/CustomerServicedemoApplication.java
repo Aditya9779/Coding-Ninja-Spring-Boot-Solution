@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class CustomerServicedemoApplication {
 
     public static void main(String[] args) {
-        // Load the beans from ApplicationContext.xml
+        // Load the beans  ApplicationContext.xml
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("ApplicationContext.xml");
 
         // Get beans for each department
