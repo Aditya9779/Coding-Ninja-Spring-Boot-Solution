@@ -1,27 +1,37 @@
 package com.example.MovieTicket.MovieBooking.Model;
 
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import java.util.List;
 
 public class Movie {
+
+    @Min(1)
     private String id;
 
+    @Size(min = 3, max = 20)
     private String movieName;
+
+    @NotNull
     private String movieDirector;
 
+    @Min(1)
+    @Max(10)
     private long movieRating;
 
     private String movieLanguage;
-
     private List<String> writers;
-
     private List<String> actors;
-
     private List<String> genre;
 
-    public Movie(String id, String movieName, String movieDirector,
-                 long movieRating, String
-                         movieLanguage, List<String> writers, List<String>
-                         actors, List<String> genre) {
+    // Default constructor
+    public Movie() {
+    }
+
+    // Parameterized constructor
+    public Movie(String id, String movieName, String movieDirector, long movieRating, String movieLanguage, List<String> writers, List<String> actors, List<String> genre) {
         this.id = id;
         this.movieName = movieName;
         this.movieDirector = movieDirector;
@@ -32,6 +42,7 @@ public class Movie {
         this.genre = genre;
     }
 
+    // Getters and Setters
     public String getId() {
         return id;
     }
@@ -95,5 +106,4 @@ public class Movie {
     public void setGenre(List<String> genre) {
         this.genre = genre;
     }
-
 }
