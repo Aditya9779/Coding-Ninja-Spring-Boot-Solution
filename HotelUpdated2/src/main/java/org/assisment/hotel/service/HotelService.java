@@ -23,6 +23,14 @@ public class HotelService {
     public void createHotel(Hotel hotel) {
         hotelsList.add(hotel);
         hotelMap.put(hotel.getId(), hotel);
+
+        /*Add in the different Second application to create in rating application*/
+
+        /*Its accepting the prarmeter of map to add the rating*/
+        Map<String, Long> ratingMap = new HashMap<>();
+        ratingMap.put(hotel.getId(), hotel.getRating());
+        ratingServiceCommunicator.addFunction(ratingMap);
+
     }
 
     public Hotel getHotelById(String id) {
