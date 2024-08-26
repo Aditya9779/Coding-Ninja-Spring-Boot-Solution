@@ -24,7 +24,6 @@ public class MealService {
 		}
 		return getMealfromList(pnr);
 	}
-	
 	public void addMeal(Meal meal) {
 		long pnr = meal.getPnr();
 		
