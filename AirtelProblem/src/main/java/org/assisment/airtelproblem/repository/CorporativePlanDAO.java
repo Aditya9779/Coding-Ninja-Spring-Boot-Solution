@@ -16,6 +16,7 @@ public class CorporativePlanDAO implements DAO<CorporativePlan> {
     public int save(CorporativePlan corporativePlan) {
         int id = corporativePlanList.size();
         corporativePlan.setId(id);
+        
         corporativePlanList.add(corporativePlan);
         return id;
     }
