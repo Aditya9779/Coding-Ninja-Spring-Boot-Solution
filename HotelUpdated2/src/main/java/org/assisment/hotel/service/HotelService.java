@@ -3,6 +3,7 @@ package org.assisment.hotel.service;
 import org.assisment.hotel.communicator.RatingServiceCommunicator;
 import org.assisment.hotel.domain.Hotel;
 import org.assisment.hotel.exception.ErrorExceptionIdNotFound;
+import org.assisment.hotel.exception.HotelAlreadyPresent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
@@ -21,6 +22,9 @@ public class HotelService {
     private RatingServiceCommunicator ratingServiceCommunicator;
 
     public void createHotel(Hotel hotel) {
+        if (hotelMap.containsKey(hotel.getId())) {
+            throw new HotelAlreadyPresent("Hotel is already present with this id " + hotel.getId());
+        }
         hotelsList.add(hotel);
         hotelMap.put(hotel.getId(), hotel);
 
@@ -53,6 +57,7 @@ public class HotelService {
         Hotel getHotel = getHotelById(id); //This was the upper function for the finding by the id
         hotelsList.remove(getHotel);
         hotelMap.remove(id);
+        ratingServiceCommunicator.deleteFuntion(id);
     }
 
     public void update(Hotel updatedHotel) {
@@ -61,6 +66,9 @@ public class HotelService {
         hotelsList.add(updatedHotel); //update the hotel
         hotelMap.put(updatedHotel.getId(), updatedHotel); //use the map function to update the existing
         //hotel to according their id
+        Map<String, Long> map = new HashMap<>();
+        map.put(updatedHotel.getId(), updatedHotel.getRating());
+        ratingServiceCommunicator.updateFunction(map);
     }
 
     public void updatePath(String id, Hotel updatedHotel) {
