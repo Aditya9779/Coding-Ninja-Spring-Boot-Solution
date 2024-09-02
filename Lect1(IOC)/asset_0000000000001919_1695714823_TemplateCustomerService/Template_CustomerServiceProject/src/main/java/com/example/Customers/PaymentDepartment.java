@@ -34,6 +34,6 @@ public class PaymentDepartment implements CustomerCare {
 
     @Override
     public void getProblem() {
-        System.out.println("Dear " + this.customerName + " your issue for " + this.issue + "has been recorded, your reference id is: " + this.refId);
+        System.out.println("Dear " + this.customerName + " your issue for " + this.issue + " has been recorded, your reference id is: " + this.refId);
     }
 }

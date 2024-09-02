@@ -4,8 +4,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Scanner;
 
+@Author(name = "Aditya Srivastava", date = "02-08-2024")
 public class PayMeNowApplication {
-
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         Scanner sc = new Scanner(System.in);

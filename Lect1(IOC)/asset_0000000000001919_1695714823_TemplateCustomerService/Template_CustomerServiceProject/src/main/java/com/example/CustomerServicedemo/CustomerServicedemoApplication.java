@@ -1,6 +1,7 @@
 
 package com.example.CustomerServicedemo;
 
+import com.example.Author;
 import com.example.Customers.CustomerCare;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -8,10 +9,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import java.util.Scanner;
 
 @SpringBootApplication
+@Author(name = "Aditya Srivastava" ,date = "01-08-2024")
 public class CustomerServicedemoApplication {
 
     public static void main(String[] args) {
-        // Load the beans  ApplicationContext.xml
+        // Load the beans from ApplicationContext.xml
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("ApplicationContext.xml");
 
         // Get beans for each department

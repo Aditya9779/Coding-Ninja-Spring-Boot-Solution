@@ -18,7 +18,7 @@ public class QueryDepartment implements CustomerCare {
 
     @Override
     public void getService() {
-        System.out.println("Dear " + this.customerName + " your issue for " + this.issue + "has been recorded, your reference id is: " + this.refId);
+        System.out.println("Dear " + this.customerName + " your issue for " + this.issue + " has been recorded, your reference id is: " + this.refId);
     }
 
     @Override
