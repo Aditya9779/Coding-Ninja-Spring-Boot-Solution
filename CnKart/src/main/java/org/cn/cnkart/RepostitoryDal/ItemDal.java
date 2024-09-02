@@ -9,5 +9,5 @@ public interface ItemDal {
 
     void deleteItemDb(int id);
 
-    void updateItemDb(int id,Item item);
+    void updateItemDb(Item item);
 }

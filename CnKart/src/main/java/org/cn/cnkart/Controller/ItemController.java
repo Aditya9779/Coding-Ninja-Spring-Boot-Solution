@@ -28,8 +28,8 @@ public class ItemController {
         itemService.deleteItemInDb(id);
     }
 
-    @PutMapping("/id/{id}")
-    public void updateItem(@PathVariable int id, @RequestBody Item item) {
-        itemService.updateItemInDb(id, item);
+    @PutMapping("/update")
+    public void updateItem(@RequestBody Item item) {
+        itemService.updateItemInDb(item);
     }
 }

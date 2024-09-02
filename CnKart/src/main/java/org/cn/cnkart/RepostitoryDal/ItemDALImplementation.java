@@ -44,9 +44,10 @@ public class ItemDALImplementation implements ItemDal {
     }
 
     @Override
-    public void updateItemDb(int id, Item item) {
+    public void updateItemDb(Item item) {
         Session session = entityManager.unwrap(Session.class);
-        Item currentItem = session.get(Item.class, id);
+        //Fetech the data
+        Item currentItem = session.get(Item.class, item.getId());
         if (currentItem != null) {
             currentItem.setName(item.getName());
             currentItem.setDescription(item.getDescription());

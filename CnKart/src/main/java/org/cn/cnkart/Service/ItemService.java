@@ -24,7 +24,7 @@ public class ItemService {
         itemDal.deleteItemDb(id);
     }
     @Transactional
-    public void updateItemInDb(int id,Item item) {
-        itemDal.updateItemDb(id,item);
+    public void updateItemInDb(Item item) {
+        itemDal.updateItemDb(item);
     }
 }
