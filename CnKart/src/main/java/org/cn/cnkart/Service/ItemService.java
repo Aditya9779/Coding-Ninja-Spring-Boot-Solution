@@ -2,7 +2,7 @@ package org.cn.cnkart.Service;
 
 import jakarta.transaction.Transactional;
 import org.cn.cnkart.Entity.Item;
-import org.cn.cnkart.RepostitoryDal.ItemDal;
+import org.cn.cnkart.Repository.ItemDal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
