@@ -15,7 +15,7 @@ public class StudentDao implements DAO<StudentUser> {
 
     @Override
     public Optional<StudentUser> findById(Integer id) {
-        if (id <= 0 || studentUserList.isEmpty()||  id >= studentUserList.size()) {
+        if (studentUserList.isEmpty()) {
             return Optional.empty();
         }
         return Optional.of(studentUserList.get(id));
