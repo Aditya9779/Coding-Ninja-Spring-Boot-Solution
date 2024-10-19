@@ -50,7 +50,7 @@ class MealController {
 	}
 
 	
-	@DeleteMapping("/meal/{pnr}")
+	@DeleteMapping("o")
 	public void deleteMeal(@PathVariable long pnr) {
 		mealService.deleteMeal(pnr);
 	}
