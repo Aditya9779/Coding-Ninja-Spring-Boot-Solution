@@ -13,8 +13,6 @@ public class Controller {
 
     @Autowired
     private RailwayService railwayservice;
-
-
     // a. POST "/railway/ticket":  It saves a railway ticket.
     @PostMapping("/ticket")
     public void addTicket(@RequestBody Ticket ticket) {

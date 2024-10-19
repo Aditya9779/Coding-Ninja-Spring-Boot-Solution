@@ -56,13 +56,7 @@ public class PaymentDALImpl implements PaymentDAL {
 
     @Override
     public List<Payment> getByPaymentType(String paymentType) {
-      /*  Session session = entityManager.unwrap(Session.class);
-        return session.createQuery("FROM Payment WHERE paymentType = :paymentType", Payment.class)
-                .setParameter("paymentType", paymentType)
-                .getResultList();*/
-//        List<Payment> payment=getAllPayments();
-//        List<Payment> result=new ArrayList<>();
-//        for(Payment )
+
         List<Payment> allPayments = getAllPayments();
         List<Payment> paymentsByPaymentType = new ArrayList<>();
         for (Payment payment : allPayments) {
@@ -75,10 +69,6 @@ public class PaymentDALImpl implements PaymentDAL {
 
     @Override
     public List<Payment> getByPaymentDescription(String keyword) {
-        /*Session session = entityManager.unwrap(Session.class);
-        return session.createQuery("FROM Payment WHERE description LIKE :keyword", Payment.class)
-                .setParameter("keyword", "%" + keyword + "%")
-                .getResultList();*/
         List<Payment> allPayments = getAllPayments();
         List<Payment> paymentsByDescription = new ArrayList<>();
         for (Payment payment : allPayments) {

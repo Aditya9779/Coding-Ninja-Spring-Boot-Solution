@@ -2,7 +2,7 @@ package railway.com.example.RailwayAndMeal.Entity;
 
 public class Ticket {
 
-	private long pnr;
+	public long pnr;
 	public String name;
 	public long age;
 	public String birth;
