@@ -26,7 +26,6 @@ public class myUser implements User {
    public myUser(){
        accountList = new ArrayList<Account>();
    }
-
    @PostConstruct
     public void init() {
         System.out.println("User bean has been instantiated and I'm the init() method");
