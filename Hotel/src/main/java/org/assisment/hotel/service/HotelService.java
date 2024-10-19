@@ -27,4 +27,9 @@ public class HotelService {
     }
 
 
+    public void deleteHotelById(String id) {
+        Hotel getHotel = getHotelById(id); //This was the upper function for the finding by the id
+        hotelsList.remove(getHotel);
+        hotelMap.remove(id);
+    }
 }
